@@ -1,0 +1,40 @@
+.home-intro-container {
+  text-align: left;
+}
+
+.home-intro-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-intro-list {
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.home-intro-list-secondary {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.home-intro-cta {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .home-intro-container {
+    padding: 0 0.5rem;
+    text-align: left;
+  }
+  .home-intro-title {
+    font-size: 1.4rem;
+  }
+  .home-intro-list, .home-intro-list-secondary {
+    font-size: 0.98rem;
+    margin: 1rem 0;
+    padding-left: 0.7rem;
+  }
+}

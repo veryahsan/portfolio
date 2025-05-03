@@ -1,0 +1,114 @@
+@import 'variables';
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px; // Default navbar height
+}
+
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 75px; // Adjust if your mobile navbar is taller/shorter
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  margin-top: 43px;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  transition: background-color $transition-speed ease;
+  
+  &.light-theme {
+    background-color: $background-light;
+    color: $text-light;
+  }
+  
+  &.dark-theme {
+    background-color: $background-dark;
+    color: $text-dark;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.section {
+  background: $section-bg-light;
+  border: 1px solid $section-border-light;
+  border-radius: $border-radius;
+  margin-bottom: $spacing-lg;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  transition: background $transition-speed, border $transition-speed;
+
+  .dark-theme & {
+    background: $section-bg-dark;
+    border: 1px solid $section-border-dark;
+  }
+}
+
+section {
+  padding: $spacing-lg 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background-color: transparent;
+  color: $text-light;
+  cursor: pointer;
+  transition: all $transition-speed ease;
+  
+  .dark-theme & {
+    color: $text-dark;
+  }
+  
+  &:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
+  
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+    border-color: $primary-color;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+  .section {
+    padding: $spacing-lg 0;
+    margin-bottom: $spacing-md;
+  }
+  body {
+    font-size: 15px;
+  }
+} 

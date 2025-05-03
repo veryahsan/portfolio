@@ -1,0 +1,138 @@
+@import '../../styles/variables';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba($background-light, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+  transition: all $transition-speed ease;
+
+  .dark-theme & {
+    background-color: rgba($background-dark, 0.8);
+    border-bottom-color: $border-color-dark;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 $spacing-md;
+  }
+
+  &__logo {
+    font-size: $font-size-xlarge;
+    font-weight: 600;
+
+    a {
+      color: $text-light;
+      text-decoration: none;
+
+      .dark-theme & {
+        color: $text-dark;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-lg;
+    list-style: none;
+
+    a {
+      color: $text-light;
+      text-decoration: none;
+      transition: color $transition-speed ease;
+
+      .dark-theme & {
+        color: $text-dark;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &.active {
+        color: $primary-color;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__theme-toggle {
+    background: none;
+    border: none;
+    color: $text-light;
+    cursor: pointer;
+    padding: $spacing-xs;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color $transition-speed ease;
+
+    .dark-theme & {
+      color: $text-dark;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__container {
+      flex-direction: column;
+      height: auto;
+      gap: $spacing-sm;
+      padding: $spacing-sm;
+    }
+    &__links {
+      gap: $spacing-md;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__logo {
+      font-size: $font-size-large;
+      margin-bottom: $spacing-xs;
+    }
+    &__theme-toggle {
+      margin-top: $spacing-xs;
+    }
+  }
+}
+
+.terminal-logo {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 1.6rem;
+  color: $primary-color;
+  letter-spacing: -2px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.code-image {
+  height: 28px;
+  margin-left: 8px;
+  vertical-align: middle;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+.logo-brackets {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  color: $primary-color;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-right: 2px;
+  letter-spacing: -1px;
+  user-select: none;
+} 
